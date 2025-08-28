@@ -1,0 +1,5 @@
+{
+  "name": "Smart Waste Management",
+  "description": "A responsive web application for residents to schedule waste pickups, report uncollected waste, and earn recycling rewards. Includes an admin dashboard for managing operations.",
+  "requestFramePermissions": []
+}
