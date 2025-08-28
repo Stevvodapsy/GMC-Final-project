@@ -7,6 +7,7 @@ import reportsRoutes from "./routes/reports.js";
 import pickupsRoutes from "./routes/pickups.js";
 import rewardsRoutes from "./routes/rewards.js";
 import tasksRoutes from "./routes/tasks.js";
+import analyticsRoutes from "./routes/analytics.js";
 
 dotenv.config();
 
@@ -28,6 +29,7 @@ app.use("/api/reports", reportsRoutes);
 app.use("/api/pickups", pickupsRoutes);
 app.use("/api/rewards", rewardsRoutes);
 app.use("/api/tasks", tasksRoutes);
+app.use("/api/analytics", analyticsRoutes);
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
