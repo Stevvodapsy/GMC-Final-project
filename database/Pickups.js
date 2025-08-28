@@ -1,20 +1,23 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 
-const pickupSchema = new mongoose.Schema({
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-    required: true,
+const pickupSchema = new mongoose.Schema(
+  {
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
+    date: {
+      type: Date,
+      required: true,
+    },
+    status: {
+      type: String,
+      enum: ["scheduled", "completed", "missed"],
+      default: "scheduled",
+    },
   },
-  date: {
-    type: Date,
-    required: true,
-  },
-  status: {
-    type: String,
-    enum: ['scheduled', 'completed', 'missed'],
-    default: 'scheduled',
-  },
-}, { timestamps: true });
+  { timestamps: true }
+);
 
-module.exports = mongoose.model('Pickup', pickupSchema);
+export default mongoose.model("Pickup", pickupSchema);

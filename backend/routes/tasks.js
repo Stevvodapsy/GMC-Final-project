@@ -1,12 +1,11 @@
-const express = require('express');
+import express from "express";
 const router = express.Router();
-const taskController = require('../controllers/taskController');
-const { protect, admin } = require('../middleware/authMiddleware');
+import * as taskController from "../controllers/taskController.js";
 
 // Assign a task to an employee
-router.post('/assign', protect, admin, taskController.assignTask);
+router.post("/assign", taskController.assignTask);
 
 // Update task status
-router.put('/:id/status', protect, taskController.updateTaskStatus);
+router.put("/:id/status", taskController.updateTaskStatus);
 
-module.exports = router;
+export default router;
